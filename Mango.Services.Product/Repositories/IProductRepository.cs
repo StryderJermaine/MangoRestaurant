@@ -3,7 +3,7 @@
 namespace Mango.Services.Product.Repositories;
 
 /// <summary>
-/// Repository class for <see cref="Models.Product"/>
+/// Repository interface for <see cref="Models.Product"/>
 /// </summary>
 public interface IProductRepository
 {
