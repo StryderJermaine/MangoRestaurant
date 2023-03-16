@@ -1,28 +1,25 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Mango.Services.Product.Models;
+namespace Mango.Services.Product.Models.Dto;
 
 /// <summary>
-/// Model class for products table
+/// Dto class for <see cref="Product"/>
 /// </summary>
-public class Product
+public class ProductDto
 {
     /// <summary>
     /// Product Id
     /// </summary>
-    [Key]
     public int ProductId { get; set; }
 
     /// <summary>
     /// Product name
     /// </summary>
-    [Required]
     public string Name { get; set; }
 
     /// <summary>
     /// Price of product
     /// </summary>
-    [Range(1, 1000)]
     public double Price { get; set; }
 
     /// <summary>

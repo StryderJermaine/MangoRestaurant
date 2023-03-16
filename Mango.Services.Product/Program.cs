@@ -1,3 +1,4 @@
+ using AutoMapper;
  using Mango.Services.Product.DbContexts;
  using Microsoft.EntityFrameworkCore;
 
@@ -19,6 +20,11 @@
             //Dbcontexts
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            //AutoMapper config
+            IMapper mapper = MappingConfig.RegisterMapperConfiguration().CreateMapper();
+            builder.Services.AddSingleton(mapper);
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             var app = builder.Build();
 
