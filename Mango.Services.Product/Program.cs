@@ -1,4 +1,7 @@
-namespace Mango.Services.Product
+ using Mango.Services.Product.DbContexts;
+ using Microsoft.EntityFrameworkCore;
+
+ namespace Mango.Services.Product
 {
     public class Program
     {
@@ -12,6 +15,10 @@ namespace Mango.Services.Product
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            //Dbcontexts
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 
