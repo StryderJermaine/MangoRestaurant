@@ -95,7 +95,7 @@ namespace Mango.Services.Product.Controllers
         /// </summary>
         /// <param name="id">Id of the product to be deleted</param>
         /// <returns></returns>
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<ResponseDto> Delete(int id)
         {
             try
